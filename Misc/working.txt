@@ -1,0 +1,80 @@
+Before you read this, just keep in mind that i am terrible at explanations and getting across what i'm thinking. With that said, let the maths begin.
+
+750x750 #geometry of the window
+
+129 # the amount of pixels wide the first column is
+750/7 = 107.142857143 # the amount of pixels high the button can be
+107.142857143/750 = 0.142857142857 # The hight of a button relative to the hight of the window
+to find the y of each button you would * the hight by the amount to button before it
+
+750-129=621 #Amount of pixels wide the second column is
+192/750 = 0.172 # Percentange of the button column relative to the window at 750 pixels wide
+621/750=0.828
+
+621/2 = 310.5 # The middle of the second column
+310.5+129 = 439.5 # The amount of pixels to the middle of the second column
+439.5/750 = 0.568
+
+450 # Max amount of pixels long the text can be on a single line
+450/2 = 225
+310.5-225 = 85.5
+85.5/621 = 0.13768115942
+
+# find the y co-ordinate at the middle of the "Veiw button"
+0.142857142857*2*750 = 214.285714285
+214.285714285 + (0.142857142857*750)/2 = 267.857142856
+267.857142856/750 = 0.357142857141
+
+# Find the amount of "_" i need to fill the window
+# I found the number 75 out of trial and error (I like how it is a nice number)
+621/x = 75
+621 = 75
+621/75 = 8.28
+
+# Contructiong an expression to calcualte how many iterations the lopp should make
+so, we have "for i in range(25)" as of right now, this can create problems as the list index will eventually be out of range and will throw an error
+we will be using the len(quotes) from the previous calculation
+106-(25*4) = 6 # this work for the last iteration and should not cause an error
+However, if we use this same calculation but for page three:
+106-(25*3) = 31 this would loop 31 times, which we do not want, we want it to loop only 25 times (see line 226 for the solution) 
+
+# find where to place the page buttons (i want them to be in the middle of the page and in the middle of the remove button)
+750*0.142857142857*6 = 642.857143
+750*0.142857142857 = 107.142857
+107.142857/2 = 53.5714285
+642.857143+53.5714285 = 696.428571
+696.428571/750 = 0.928571428
+0.918571428 # the rely, idk it just looks better
+
+# find where to place the menu button on the search page
+226-129 = 97 # 226 is the x coordinate in the mockup i made
+97-7 = 90 # i want it 7 pixels before the search bar
+90/621 = 0.144927536232 # this is the relx
+37/750 = 0.0493333333333 # the rely
+
+#find the relx and rely of the input box in the search page
+250-129 = 121
+121/621 = 0.194847020934 # the relx
+33/750 = 0.044
+
+#settings for the search button
+626-129 = 497
+497/621 = 0.800322061192 # the relx
+0.0493333333333 # the rely is the same as the menu button
+
+
+-----------------------------------  ^
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|<-129->|<----------621---------->| 750
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+|       |                         |  |
+-----------------------------------  v
