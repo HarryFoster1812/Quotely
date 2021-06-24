@@ -1,16 +1,18 @@
 ###################### Imports ######################
+
+from tkinter import *  
+from tkinter import scrolledtext
+from functools import partial
+import json
+import time
+import pickle
+import webbrowser
+import math
+import os
+
 try:
-    from tkinter import *  
-    from tkinter import scrolledtext
-    from functools import partial
-    import json
     import urllib3
     from PIL import Image, ImageTk
-    import pickle
-    import webbrowser
-    import math
-    import os
-
     from bs4 import BeautifulSoup
     import lxml
 
@@ -394,7 +396,7 @@ def search(query, mode):
 
 ###################### Main ######################
 
-if __name__ == '__main__': # so i can 
+if __name__ == '__main__': # so I can import other functions without them running
 
     read_write('read') # Reads the data from the file
     root = Tk() # Creates Tkinter window
